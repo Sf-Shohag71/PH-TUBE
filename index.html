@@ -15,9 +15,9 @@
   <body>
     <header>
       <nav
-        class="w-11/12 mx-auto py-4 flex justify-between items-center border-b border-gray-200"
+        class="w-11/12 mx-auto py-5 flex justify-between items-center border-b border-gray-200"
       >
-        <div class="logo w-[120px] h-[49px] mt-2">
+        <div class="logo w-[120px] h-[49px] mt-4">
           <img src="assets/Logo.png" alt="PH-TUBE Logo" />
         </div>
         <div class="search join">
@@ -47,9 +47,18 @@
         </div>
 
         <div class="sort">
-          <button class="btn">Sort By View</button>
+          <button class="btn bg-[#FF1F3D] text-white">Sort By View</button>
         </div>
       </nav>
     </header>
+
+    <nav id="category-container" class="flex justify-center gap-4 py-4">
+      <div>
+        <button class="btn btn-sm bg-[#FF1F3D] text-white">All</button>
+      </div>
+    </nav>
+
+    <!-- Script files -->
+    <script src="script/index.js"></script>
   </body>
 </html>
