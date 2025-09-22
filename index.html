@@ -11,6 +11,12 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .active {
+        background-color: #ff1f3d;
+        color: white;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -23,7 +29,7 @@
         <div class="search join">
           <div>
             <label class="input join-item">
-              <input type="email" placeholder="Search" />
+              <input id="search-input" type="email" placeholder="Search" />
             </label>
           </div>
           <button class="btn btn-gray-600 join-item">
@@ -54,10 +60,7 @@
 
     <nav id="category-container" class="flex justify-center gap-4 py-4">
       <div>
-        <button
-          onclick="loadVideos()"
-          class="btn btn-sm bg-[#FF1F3D] text-white"
-        >
+        <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">
           All
         </button>
       </div>
@@ -65,7 +68,31 @@
     <section
       id="video-container"
       class="w-11/12 mx-auto grid grid-cols-4 gap-5"
-    ></section>
+    >
+      <!-- When no videos found -->
+      <div
+        class="flex flex-col justify-center text-center items-center col-span-4 py-20"
+      >
+        <img class="w-[150px]" src="assets/Icon.png" alt="video-not-found" />
+        <h2 class="text-2xl font-bold pt-4">
+          Oops!! Sorry, There is no content here
+        </h2>
+      </div>
+    </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="video_details" class="modal">
+      <div class="modal-box">
+        <div id="details-container"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
     <!-- Script files -->
     <script src="script/index.js"></script>
