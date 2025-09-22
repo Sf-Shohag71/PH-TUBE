@@ -1,3 +1,13 @@
+const showLoader = () => {
+  document.getElementById("loader").classList.remove("hidden")
+  document.getElementById("video-container").classList.add("hidden")
+}
+const hideLoader = () => {
+  document.getElementById("loader").classList.add("hidden")
+  document.getElementById("video-container").classList.remove("hidden")
+}
+
+
 // Remove active class from previous category button
 removeActiveClass = () => {
   const activeButtons = document.getElementsByClassName("active");
@@ -18,6 +28,7 @@ loadCategories = () => {
 
 // fetch video data from API
 loadVideos = async (searchText = "") => {
+  showLoader();
   const response = await fetch(
     `https://openapi.programming-hero.com/api/phero-tube/videos?title=${searchText}`
   );
@@ -40,6 +51,7 @@ const loadVideoDetails = async (video_id) => {
 
 // Display videos based on category
 loadVideosByCategory = (category_id) => {
+  showLoader();
   fetch(
     `https://openapi.programming-hero.com/api/phero-tube/category/${category_id}`
   )
@@ -124,6 +136,7 @@ displayVideos = (videos) => {
     `;
     videoContainer.append(videoCard);
   });
+  hideLoader();
 };
 
 // display video details in modal
