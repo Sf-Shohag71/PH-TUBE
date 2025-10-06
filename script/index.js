@@ -78,6 +78,7 @@ displayCategories = (categories) => {
     categoryContainer.appendChild(categoryDiv);
   }
 };
+
 displayVideos = (videos) => {
   // console.log(videos);
   const videoContainer = document.getElementById("video-container");
@@ -141,7 +142,7 @@ displayVideos = (videos) => {
 
 // display video details in modal
 const displayVideoDetails = (video) => {
-  console.log(video);
+  // console.log(video);
   document.getElementById("video_details").showModal();
   const detailsContainer = document.getElementById("details-container");
   detailsContainer.innerHTML = `

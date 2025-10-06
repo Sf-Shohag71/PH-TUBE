@@ -29,7 +29,7 @@
         <div class="search join">
           <div>
             <label class="input join-item">
-              <input id="search-input" type="email" placeholder="Search" />
+              <input id="search-input" type="text" placeholder="Search" />
             </label>
           </div>
           <button class="btn btn-gray-600 join-item">
@@ -58,7 +58,7 @@
       </nav>
     </header>
 
-    <nav id="category-container" class="flex justify-center gap-4 py-4">
+    <nav id="category-container" class="flex justify-center gap-4 py-6">
       <div>
         <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">
           All
@@ -72,17 +72,17 @@
 
     <section
       id="video-container"
-      class="w-11/12 mx-auto grid grid-cols-4 gap-5"
+      class="w-11/12 mx-auto grid grid-cols-4 gap-5 pb-10"
     >
       <!-- When no videos found -->
-      <div
+      <!-- <div
         class="flex flex-col justify-center text-center items-center col-span-4 py-20"
       >
         <img class="w-[150px]" src="assets/Icon.png" alt="video-not-found" />
         <h2 class="text-2xl font-bold pt-4">
           Oops!! Sorry, There is no content here
         </h2>
-      </div>
+      </div> -->
     </section>
 
     <!-- Open the modal using ID.showModal() method -->
